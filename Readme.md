@@ -1,12 +1,15 @@
-# MSA
+# MSA 실습을 위한 repository입니다.
 
+- RUN
+```
 mvn clean package docker:build
 
 docker-compose -f docker/common/docker-compose.yml up
+```
 
 
 
-## 목표 : 원래는 모놀리식 스프링 애플리케이션 -> 클라우드에 배포 가능한 MSA로 마이그레이션 하겠다.
+## MSA 목표 : 원래는 모놀리식 스프링 애플리케이션 -> 클라우드에 배포 가능한 MSA로 마이그레이션 하겠다.
 
 1. 모놀리식 애플리케이션은 각 팀에서 변경을 할 때마다, 애플리케이션 전체를 다시 빌드하고 테스트해 배포한다.
 
