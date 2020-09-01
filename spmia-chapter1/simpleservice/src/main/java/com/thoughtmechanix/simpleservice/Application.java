@@ -9,17 +9,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @SpringBootApplication
 @RestController
-@RequestMapping(value="hello")
+@RequestMapping(value = "hello") // /hello/{firstName}/{lastName}
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping(value="/{firstName}/{lastName}",method = RequestMethod.GET)
-    public String hello( @PathVariable("firstName") String firstName,
-                         @PathVariable("lastName") String lastName) {
+    @RequestMapping(value = "/{firstName}/{lastName}", method = RequestMethod.GET)
+    public String hello(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
 
-        return String.format("{\"message\":\"Hello %s %s\"}", firstName, lastName);
+        return String.format("{\"message\":\"Hello %s %s\"}", firstName, lastName); // 직접 JSON 문자열을 반환한다.
     }
 }
